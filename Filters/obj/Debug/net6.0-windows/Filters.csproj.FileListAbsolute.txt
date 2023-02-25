@@ -1,0 +1,17 @@
+D:\Programs\Filters\Filters\bin\Debug\net6.0-windows\Filters.exe
+D:\Programs\Filters\Filters\bin\Debug\net6.0-windows\Filters.deps.json
+D:\Programs\Filters\Filters\bin\Debug\net6.0-windows\Filters.runtimeconfig.json
+D:\Programs\Filters\Filters\bin\Debug\net6.0-windows\Filters.dll
+D:\Programs\Filters\Filters\bin\Debug\net6.0-windows\Filters.pdb
+D:\Programs\Filters\Filters\obj\Debug\net6.0-windows\Filters.csproj.AssemblyReference.cache
+D:\Programs\Filters\Filters\obj\Debug\net6.0-windows\Filters.Form1.resources
+D:\Programs\Filters\Filters\obj\Debug\net6.0-windows\Filters.csproj.GenerateResource.cache
+D:\Programs\Filters\Filters\obj\Debug\net6.0-windows\Filters.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programs\Filters\Filters\obj\Debug\net6.0-windows\Filters.AssemblyInfoInputs.cache
+D:\Programs\Filters\Filters\obj\Debug\net6.0-windows\Filters.AssemblyInfo.cs
+D:\Programs\Filters\Filters\obj\Debug\net6.0-windows\Filters.csproj.CoreCompileInputs.cache
+D:\Programs\Filters\Filters\obj\Debug\net6.0-windows\Filters.dll
+D:\Programs\Filters\Filters\obj\Debug\net6.0-windows\refint\Filters.dll
+D:\Programs\Filters\Filters\obj\Debug\net6.0-windows\Filters.pdb
+D:\Programs\Filters\Filters\obj\Debug\net6.0-windows\Filters.genruntimeconfig.cache
+D:\Programs\Filters\Filters\obj\Debug\net6.0-windows\ref\Filters.dll
