@@ -11,7 +11,7 @@ namespace Filters
     abstract class Filters
     {
         protected abstract Color calculateNewPixelColor(Bitmap sourceImage, int i, int j);
-        
+
         public Bitmap processImage(Bitmap sourceImage, BackgroundWorker worker)
         {
             Bitmap resultImage = new Bitmap(sourceImage.Width, sourceImage.Height);
@@ -27,7 +27,7 @@ namespace Filters
 
         public int Clamp(int value, int min, int max)
         {
-            if (value < min) return min; 
+            if (value < min) return min;
             if (value > max) return max;
             return value;
         }
