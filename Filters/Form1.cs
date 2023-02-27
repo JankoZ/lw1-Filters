@@ -147,8 +147,6 @@ namespace Filters
             dialog.FileName = "Image";
             dialog.DefaultExt = "png";
             dialog.RestoreDirectory = true;
-            dialog.CheckFileExists = true;
-            dialog.CheckPathExists = true;
             dialog.SupportMultiDottedExtensions = true;
             dialog.OverwritePrompt = true;
 
