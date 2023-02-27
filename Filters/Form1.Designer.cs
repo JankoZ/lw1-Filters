@@ -32,6 +32,7 @@
             menuStrip1 = new MenuStrip();
             файлToolStripMenuItem = new ToolStripMenuItem();
             открытьToolStripMenuItem = new ToolStripMenuItem();
+            сохранитьToolStripMenuItem = new ToolStripMenuItem();
             выйтиToolStripMenuItem = new ToolStripMenuItem();
             фильтрыToolStripMenuItem = new ToolStripMenuItem();
             точечныеToolStripMenuItem = new ToolStripMenuItem();
@@ -59,7 +60,7 @@
             button1 = new Button();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             panel1 = new Panel();
-            сохранитьToolStripMenuItem = new ToolStripMenuItem();
+            button2 = new Button();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
@@ -85,14 +86,21 @@
             // открытьToolStripMenuItem
             // 
             открытьToolStripMenuItem.Name = "открытьToolStripMenuItem";
-            открытьToolStripMenuItem.Size = new Size(224, 26);
+            открытьToolStripMenuItem.Size = new Size(166, 26);
             открытьToolStripMenuItem.Text = "Открыть";
             открытьToolStripMenuItem.Click += открытьToolStripMenuItem_Click;
+            // 
+            // сохранитьToolStripMenuItem
+            // 
+            сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
+            сохранитьToolStripMenuItem.Size = new Size(166, 26);
+            сохранитьToolStripMenuItem.Text = "Сохранить";
+            сохранитьToolStripMenuItem.Click += сохранитьToolStripMenuItem_Click;
             // 
             // выйтиToolStripMenuItem
             // 
             выйтиToolStripMenuItem.Name = "выйтиToolStripMenuItem";
-            выйтиToolStripMenuItem.Size = new Size(224, 26);
+            выйтиToolStripMenuItem.Size = new Size(166, 26);
             выйтиToolStripMenuItem.Text = "Выйти";
             выйтиToolStripMenuItem.Click += выйтиToolStripMenuItem_Click;
             // 
@@ -265,7 +273,7 @@
             // button1
             // 
             button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            button1.Location = new Point(2, 47);
+            button1.Location = new Point(2, 31);
             button1.Name = "button1";
             button1.Size = new Size(117, 29);
             button1.TabIndex = 3;
@@ -285,18 +293,22 @@
             // 
             panel1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             panel1.BackColor = SystemColors.ControlLight;
+            panel1.Controls.Add(button2);
             panel1.Controls.Add(button1);
-            panel1.Location = new Point(666, 336);
+            panel1.Location = new Point(666, 352);
             panel1.Name = "panel1";
-            panel1.Size = new Size(122, 79);
+            panel1.Size = new Size(122, 63);
             panel1.TabIndex = 4;
             // 
-            // сохранитьToolStripMenuItem
+            // button2
             // 
-            сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            сохранитьToolStripMenuItem.Size = new Size(224, 26);
-            сохранитьToolStripMenuItem.Text = "Сохранить";
-            сохранитьToolStripMenuItem.Click += сохранитьToolStripMenuItem_Click;
+            button2.Location = new Point(3, 3);
+            button2.Name = "button2";
+            button2.Size = new Size(116, 29);
+            button2.TabIndex = 5;
+            button2.Text = "Назад";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // Form1
             // 
@@ -361,5 +373,6 @@
         private ToolStripMenuItem поYToolStripMenuItem2;
         private ToolStripMenuItem тиснениеToolStripMenuItem;
         private ToolStripMenuItem сохранитьToolStripMenuItem;
+        private Button button2;
     }
 }

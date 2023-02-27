@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.IO;
 
 namespace Filters
@@ -5,6 +6,8 @@ namespace Filters
     public partial class Form1 : Form
     {
         Bitmap image;
+        List<Bitmap> images = new List<Bitmap>();
+
         public Form1()
         {
             InitializeComponent();
@@ -32,7 +35,11 @@ namespace Filters
         private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
             Bitmap newImage = ((Filters)e.Argument).processImage(image, backgroundWorker1);
-            if (backgroundWorker1.CancellationPending != true) image = newImage;
+            if (backgroundWorker1.CancellationPending != true)
+            {
+                images.Add(image);
+                image = newImage;
+            }
         }
 
         private void backgroundWorker1_ProgressChanged(object sender, System.ComponentModel.ProgressChangedEventArgs e)
@@ -134,7 +141,12 @@ namespace Filters
 
         private void тиснениеToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Filters filter = new EmbossingFilter();
+            Filters filter = new GrayScaleFilter();
+            Bitmap resultImage = new Bitmap(image);
+            FilterApply(filter, resultImage);
+            filter = new EmbossingFilter();
+            FilterApply(filter, resultImage);
+            filter = new NormalizationFilter();
             backgroundWorker1.RunWorkerAsync(filter);
         }
 
@@ -142,15 +154,32 @@ namespace Filters
         {
             SaveFileDialog dialog = new SaveFileDialog();
             dialog.AddExtension = true;
-            dialog.Filter = "Portable Network Graphics (*.png)| *.png |Joint Photographic Experts Group (*.jpg)| *.jpg |Bitmap Picture (*.bmp)| *.bmp |All Files (*.*)| *.* ";
+            dialog.Filter = "Portable Network Graphics (*.png)|*.png|Joint Photographic Experts Group (*.jpg)|*.jpg|Bitmap Picture (*.bmp)|*.bmp|All Files (*.*)|*.*";
             dialog.FilterIndex = 1;
             dialog.FileName = "Image";
-            dialog.DefaultExt = "png";
-            dialog.RestoreDirectory = true;
-            dialog.SupportMultiDottedExtensions = true;
             dialog.OverwritePrompt = true;
 
             if (dialog.ShowDialog() == DialogResult.OK) pictureBox1.Image.Save(dialog.FileName);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (images.Count > 0)
+            {
+                pictureBox1.Image = images[images.Count - 1];
+                pictureBox1.Refresh();
+                images.Remove(images[images.Count - 1]);
+            }
+            else MessageBox.Show("Невозможно отменить действие!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void FilterApply(Filters filter, Bitmap resultImage)
+        {
+            resultImage = filter.processImage(image, backgroundWorker1);
+            images.Add(image);
+            image = resultImage;
+            pictureBox1.Image = resultImage;
+            pictureBox1.Refresh();
         }
     }
 }
