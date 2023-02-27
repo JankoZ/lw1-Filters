@@ -1,3 +1,5 @@
+using System.IO;
+
 namespace Filters
 {
     public partial class Form1 : Form
@@ -134,6 +136,23 @@ namespace Filters
         {
             Filters filter = new EmbossingFilter();
             backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void ñîõðàíèòüToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.AddExtension = true;
+            dialog.Filter = "Portable Network Graphics (*.png)| *.png |Joint Photographic Experts Group (*.jpg)| *.jpg |Bitmap Picture (*.bmp)| *.bmp |All Files (*.*)| *.* ";
+            dialog.FilterIndex = 1;
+            dialog.FileName = "Image";
+            dialog.DefaultExt = "png";
+            dialog.RestoreDirectory = true;
+            dialog.CheckFileExists = true;
+            dialog.CheckPathExists = true;
+            dialog.SupportMultiDottedExtensions = true;
+            dialog.OverwritePrompt = true;
+
+            if (dialog.ShowDialog() == DialogResult.OK) pictureBox1.Image.Save(dialog.FileName);
         }
     }
 }
