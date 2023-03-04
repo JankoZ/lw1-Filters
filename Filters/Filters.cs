@@ -10,7 +10,7 @@ namespace Filters
 {
     abstract class Filters
     {
-        protected abstract Color calculateNewPixelColor(Bitmap sourceImage, int i, int j);
+        protected abstract Color calculateNewPixelColor(Bitmap sourceImage, int width, int height);
 
         public Bitmap processImage(Bitmap sourceImage, BackgroundWorker worker)
         {

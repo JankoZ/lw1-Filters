@@ -1,12 +1,13 @@
 using System.Diagnostics;
 using System.IO;
+using System.Runtime.Intrinsics.X86;
 
 namespace Filters
 {
     public partial class Form1 : Form
     {
         Bitmap image;
-        List<Bitmap> images = new List<Bitmap>();
+        Stack<Bitmap> images = new Stack<Bitmap>();
 
         public Form1()
         {
@@ -26,18 +27,12 @@ namespace Filters
             }
         }
 
-        private void èíâåğñèÿToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            InvertFilter filter = new InvertFilter();
-            backgroundWorker1.RunWorkerAsync(filter);
-        }
-
         private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
             Bitmap newImage = ((Filters)e.Argument).processImage(image, backgroundWorker1);
             if (backgroundWorker1.CancellationPending != true)
             {
-                images.Add(image);
+                images.Push(image);
                 image = newImage;
             }
         }
@@ -62,21 +57,64 @@ namespace Filters
             backgroundWorker1.CancelAsync();
         }
 
-        private void ğàçìûòèåToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Filters filter = new BlurFilter();
-            backgroundWorker1.RunWorkerAsync(filter);
-        }
-
-        private void ïîÃàóññóToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Filters filter = new GaussianFilter();
-            backgroundWorker1.RunWorkerAsync(filter);
-        }
-
         private void âûéòèToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void ñîõğàíèòüToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (image != null)
+            {
+                SaveFileDialog dialog = new SaveFileDialog();
+                dialog.AddExtension = true;
+                dialog.Filter = "Portable Network Graphics (*.png)|*.png|Joint Photographic Experts Group (*.jpg)|*.jpg|Bitmap Picture (*.bmp)|*.bmp|All Files (*.*)|*.*";
+                dialog.FilterIndex = 1;
+                dialog.FileName = "Image";
+                dialog.OverwritePrompt = true;
+
+                if (dialog.ShowDialog() == DialogResult.OK) pictureBox1.Image.Save(dialog.FileName);
+            }
+            else MessageBox.Show("Íåâîçìîæíî ñîõğàíèòü!", "Îøèáêà", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (images.Count > 0)
+            {
+                image = images.Pop();
+                pictureBox1.Image = image;
+                pictureBox1.Refresh();
+            }
+            else MessageBox.Show("Íåâîçìîæíî îòìåíèòü äåéñòâèå!", "Îøèáêà", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void FilterApply(Filters filter, Bitmap resultImage)
+        {
+            resultImage = filter.processImage(image, backgroundWorker1);
+            images.Push(image);
+            image = resultImage;
+            pictureBox1.Image = resultImage;
+            pictureBox1.Refresh();
+        }
+
+        #region Filters
+        private void âîëíûToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filters filter = new WavesFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void ïåğåíîñToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filters filter = new MovingFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void ïîâîğîòToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filters filter = new RotateFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
         }
 
         private void ñäåëàòü×åğíîáåëûìToolStripMenuItem_Click(object sender, EventArgs e)
@@ -150,36 +188,55 @@ namespace Filters
             backgroundWorker1.RunWorkerAsync(filter);
         }
 
-        private void ñîõğàíèòüToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ğàçìûòèåToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SaveFileDialog dialog = new SaveFileDialog();
-            dialog.AddExtension = true;
-            dialog.Filter = "Portable Network Graphics (*.png)|*.png|Joint Photographic Experts Group (*.jpg)|*.jpg|Bitmap Picture (*.bmp)|*.bmp|All Files (*.*)|*.*";
-            dialog.FilterIndex = 1;
-            dialog.FileName = "Image";
-            dialog.OverwritePrompt = true;
-
-            if (dialog.ShowDialog() == DialogResult.OK) pictureBox1.Image.Save(dialog.FileName);
+            Filters filter = new BlurFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void ïîÃàóññóToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (images.Count > 0)
+            Filters filter = new GaussianFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void èíâåğñèÿToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filters filter = new InvertFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void ıôôåêòñòåêëàToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filters filter = new GlassFilter();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void ğàçìûòèåÂÄâèæåíèèToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filters filter = new MotionBlurFilter(3);
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void ñåğûéÌèğToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GrayWorldFilter grayWorldFilter = new GrayWorldFilter();
+            double n = image.Height * image.Width, rSum = 0, gSum = 0, bSum = 0;
+            for (int i = 0; i != image.Width; i++) for (int j = 0; j != image.Height; j++)
             {
-                pictureBox1.Image = images[images.Count - 1];
-                pictureBox1.Refresh();
-                images.Remove(images[images.Count - 1]);
+                rSum += image.GetPixel(i, j).R;
+                gSum += image.GetPixel(i, j).G;
+                bSum += image.GetPixel(i, j).B;
             }
-            else MessageBox.Show("Íåâîçìîæíî îòìåíèòü äåéñòâèå!", "Îøèáêà", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        }
 
-        private void FilterApply(Filters filter, Bitmap resultImage)
-        {
-            resultImage = filter.processImage(image, backgroundWorker1);
-            images.Add(image);
-            image = resultImage;
-            pictureBox1.Image = resultImage;
-            pictureBox1.Refresh();
+            grayWorldFilter.rAvg = (1 / n) * rSum;
+            grayWorldFilter.gAvg = (1 / n) * gSum;
+            grayWorldFilter.bAvg = (1 / n) * bSum;
+            grayWorldFilter.avg = (grayWorldFilter.rAvg + grayWorldFilter.gAvg + grayWorldFilter.bAvg) / 3;
+
+            Filters filter = grayWorldFilter;
+            backgroundWorker1.RunWorkerAsync(filter);
         }
+        #endregion
     }
 }
