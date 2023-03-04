@@ -19,7 +19,7 @@ namespace Filters
             {
                 if (i == j) kernel[i, j] = 1;
                 else kernel[i, j] = 0;
-                kernel[i, j] *= 1.0f / n;
+                kernel[i, j] /= n;
             }
         }
     }
