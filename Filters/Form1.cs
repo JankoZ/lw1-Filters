@@ -32,7 +32,7 @@ namespace Filters
             Bitmap newImage = ((Filters)e.Argument).processImage(image, backgroundWorker1);
             if (backgroundWorker1.CancellationPending != true)
             {
-                images.Push(image);
+                //images.Push(image);
                 image = newImage;
             }
         }
@@ -89,101 +89,105 @@ namespace Filters
             else MessageBox.Show("Íåâîçìîæíî îòìåíèòü äåéñòâèå!", "Îøèáêà", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
-        private void FilterApply(Filters filter, Bitmap resultImage)
-        {
-            resultImage = filter.processImage(image, backgroundWorker1);
-            images.Push(image);
-            image = resultImage;
-            pictureBox1.Image = resultImage;
-            pictureBox1.Refresh();
-        }
-
         #region Filters
         private void âîëíûToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Filters filter = new WavesFilter();
+            images.Push(image);
             backgroundWorker1.RunWorkerAsync(filter);
         }
 
         private void ïåðåíîñToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Filters filter = new MovingFilter();
+            images.Push(image);
             backgroundWorker1.RunWorkerAsync(filter);
         }
 
         private void ïîâîðîòToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Filters filter = new RotateFilter();
+            images.Push(image);
             backgroundWorker1.RunWorkerAsync(filter);
         }
 
         private void ñäåëàòü×åðíîáåëûìToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Filters filter = new GrayScaleFilter();
+            images.Push(image);
             backgroundWorker1.RunWorkerAsync(filter);
         }
 
         private void ñåïèÿToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Filters filter = new SepiaFilter();
+            images.Push(image);
             backgroundWorker1.RunWorkerAsync(filter);
         }
 
         private void ïîâûñèòü_ÿðêîñòütoolStripMenuItem_Click(object sender, EventArgs e)
         {
             Filters filter = new BrightnessFilter();
+            images.Push(image);
             backgroundWorker1.RunWorkerAsync(filter);
         }
 
         private void ïîYToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Filters filter = new SobelFilter('Y');
+            images.Push(image);
             backgroundWorker1.RunWorkerAsync(filter);
         }
 
         private void ïîXToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Filters filter = new SobelFilter('X');
+            images.Push(image);
             backgroundWorker1.RunWorkerAsync(filter);
         }
 
         private void èçìåíåíèåÐåçêîñòèToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Filters filter = new SharpnessFilter();
+            images.Push(image);
             backgroundWorker1.RunWorkerAsync(filter);
         }
 
         private void ïîXToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Filters filter = new EdgeDetectionFilter(0, 'X');
+            images.Push(image);
             backgroundWorker1.RunWorkerAsync(filter);
         }
 
         private void ïîYToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Filters filter = new EdgeDetectionFilter(0, 'Y');
+            images.Push(image);
             backgroundWorker1.RunWorkerAsync(filter);
         }
 
         private void ïîXToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             Filters filter = new EdgeDetectionFilter(1, 'X');
+            images.Push(image);
             backgroundWorker1.RunWorkerAsync(filter);
         }
 
         private void ïîYToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             Filters filter = new EdgeDetectionFilter(1, 'Y');
+            images.Push(image);
             backgroundWorker1.RunWorkerAsync(filter);
         }
 
         private void òèñíåíèåToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Filters filter = new GrayScaleFilter();
-            Bitmap resultImage = new Bitmap(image);
-            FilterApply(filter, resultImage);
+            images.Push(image);
+            image = filter.processImage(image);
             filter = new EmbossingFilter();
-            FilterApply(filter, resultImage);
+            image = filter.processImage(image);
             filter = new NormalizationFilter();
             backgroundWorker1.RunWorkerAsync(filter);
         }
@@ -191,52 +195,128 @@ namespace Filters
         private void ðàçìûòèåToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Filters filter = new BlurFilter();
+            images.Push(image);
             backgroundWorker1.RunWorkerAsync(filter);
         }
 
         private void ïîÃàóññóToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Filters filter = new GaussianFilter();
+            images.Push(image);
             backgroundWorker1.RunWorkerAsync(filter);
         }
 
         private void èíâåðñèÿToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Filters filter = new InvertFilter();
+            images.Push(image);
             backgroundWorker1.RunWorkerAsync(filter);
         }
 
         private void ýôôåêòñòåêëàToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Filters filter = new GlassFilter();
+            images.Push(image);
             backgroundWorker1.RunWorkerAsync(filter);
         }
 
         private void ðàçìûòèåÂÄâèæåíèèToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Filters filter = new MotionBlurFilter(3);
+            images.Push(image);
             backgroundWorker1.RunWorkerAsync(filter);
         }
 
         private void ñåðûéÌèðToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GrayWorldFilter grayWorldFilter = new GrayWorldFilter();
+            images.Push(image);
             double n = image.Height * image.Width, rSum = 0, gSum = 0, bSum = 0;
-            for (int i = 0; i != image.Width; i++) for (int j = 0; j != image.Height; j++)
-            {
-                rSum += image.GetPixel(i, j).R;
-                gSum += image.GetPixel(i, j).G;
-                bSum += image.GetPixel(i, j).B;
-            }
+            for (int i = 0; i != image.Width; i++)
+                for (int j = 0; j != image.Height; j++)
+                {
+                    rSum += image.GetPixel(i, j).R;
+                    gSum += image.GetPixel(i, j).G;
+                    bSum += image.GetPixel(i, j).B;
+                }
 
             grayWorldFilter.rAvg = (1 / n) * rSum;
             grayWorldFilter.gAvg = (1 / n) * gSum;
             grayWorldFilter.bAvg = (1 / n) * bSum;
             grayWorldFilter.avg = (grayWorldFilter.rAvg + grayWorldFilter.gAvg + grayWorldFilter.bAvg) / 3;
 
-            Filters filter = grayWorldFilter;
+            backgroundWorker1.RunWorkerAsync(grayWorldFilter);
+        }
+
+        private void ëèíåéíîåÐàñòÿæåíèåÃèñòîãðàììûToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LinearHistogramStretchFilter filter = new LinearHistogramStretchFilter();
+            images.Push(image);
+
+            for (int i = 0; i != image.Width; i++)
+                for (int j = 0; j != image.Height; j++)
+                {
+                    float brightness = image.GetPixel(i, j).GetBrightness();
+                    if (filter.fMin > brightness) filter.fMin = brightness;
+                    if (filter.fMax < brightness) filter.fMax = brightness;
+                }
+
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void ìåäèàííûéÔèëüòðToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MedianFilter filter = new MedianFilter();
+            images.Push(image);
+            filter.radius = 3;
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void ðàñøèðåíèåToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filters filter = new MorphologyDilation();
+            images.Push(image);
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void ñóæåíèåToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filters filter = new MorphologyErosion();
+            images.Push(image);
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void îòêðûòèåToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filters filter = new MorphologyErosion();
+            images.Push(image);
+            image = filter.processImage(image);
+            filter = new MorphologyDilation();
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void çàêðûòèåToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Filters filter = new MorphologyDilation();
+            images.Push(image);
+            image = filter.processImage(image);
+            filter = new MorphologyErosion();
             backgroundWorker1.RunWorkerAsync(filter);
         }
         #endregion
+
+        private void gradToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Filters filter = new MorphologyDilation();
+            //Bitmap tmp = image;
+            //images.Push(image);
+            //image = filter.processImage(image);
+            //
+            //filter = new MorphologyErosion();
+            //tmp = filter.processImage(tmp);
+            //
+            //filter = new MorphologyErosion(tmp);
+            //backgroundWorker1.RunWorkerAsync(filter);
+        }
     }
 }
