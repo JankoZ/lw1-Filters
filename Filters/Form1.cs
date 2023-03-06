@@ -307,16 +307,16 @@ namespace Filters
 
         private void gradToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Filters filter = new MorphologyDilation();
-            //Bitmap tmp = image;
-            //images.Push(image);
-            //image = filter.processImage(image);
-            //
-            //filter = new MorphologyErosion();
-            //tmp = filter.processImage(tmp);
-            //
-            //filter = new MorphologyErosion(tmp);
-            //backgroundWorker1.RunWorkerAsync(filter);
+            Filters filter = new MorphologyDilation();
+            Bitmap tmp = image;
+            images.Push(image);
+            image = filter.processImage(image);
+            
+            filter = new MorphologyErosion();
+            tmp = filter.processImage(tmp);
+            
+            filter = new MorphologyGrad(image, tmp);
+            backgroundWorker1.RunWorkerAsync(filter);
         }
     }
 }

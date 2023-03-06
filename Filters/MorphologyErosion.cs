@@ -13,16 +13,6 @@ namespace Filters
             kernel = new float[,] { { 0, 1, 0 }, { 1, 1, 1 }, { 0, 1, 0 } };
         }
 
-        public MorphologyErosion(Bitmap image)
-        {
-            kernel = new float[image.Width, image.Height];
-            for (int i = 0; i < image.Width; i++)
-                for (int j = 0; j < image.Height; j++)
-                {
-                    kernel[i, j] = 1;
-                }
-        }
-
         protected override Color calculateNewPixelColor(Bitmap sourceImage, int i, int j)
         {
             int radiusX = kernel.GetLength(0) / 2;
