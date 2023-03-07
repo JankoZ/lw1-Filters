@@ -14,6 +14,11 @@ namespace Filters
 
         public Bitmap processImage(Bitmap sourceImage, BackgroundWorker worker)
         {
+            if (sourceImage == null)
+            {
+                MessageBox.Show("Невоможно применить фильтр!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return sourceImage;
+            } 
             Bitmap resultImage = new Bitmap(sourceImage.Width, sourceImage.Height);
             for (int i = 0; i != sourceImage.Width; i++)
             {

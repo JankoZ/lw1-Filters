@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using System.IO;
 using System.Runtime.Intrinsics.X86;
+using static System.Net.WebRequestMethods;
 
 namespace Filters
 {
@@ -303,7 +304,6 @@ namespace Filters
             filter = new MorphologyErosion();
             backgroundWorker1.RunWorkerAsync(filter);
         }
-        #endregion
 
         private void gradToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -311,12 +311,62 @@ namespace Filters
             Bitmap tmp = image;
             images.Push(image);
             image = filter.processImage(image);
-            
+
             filter = new MorphologyErosion();
             tmp = filter.processImage(tmp);
-            
+
             filter = new MorphologyGrad(image, tmp);
             backgroundWorker1.RunWorkerAsync(filter);
+        }
+        #endregion
+
+        private void ñâåòÿùèåñÿÊğàÿToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MedianFilter mfilter = new MedianFilter();
+            images.Push(image);
+            mfilter.radius = 1;
+            image = mfilter.processImage(image);
+
+            SobelFilter sfilter = new SobelFilter('X');
+            image = sfilter.processImage(image);
+
+            MaximumFilter filter = new MaximumFilter();
+            filter.radius = 1;
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void èäåàëüíûéÎòğàæàòåëüToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PerfectReflectorFilter filter = new PerfectReflectorFilter();
+            images.Push(image);
+            for (int i = 0; i != image.Width; i++)
+                for (int j = 0; j != image.Height; j++)
+                {
+                    if (filter.rMax < image.GetPixel(i, j).R) filter.rMax = image.GetPixel(i, j).R;
+                    if (filter.gMax < image.GetPixel(i, j).G) filter.gMax = image.GetPixel(i, j).G;
+                    if (filter.bMax < image.GetPixel(i, j).B) filter.bMax = image.GetPixel(i, j).B;
+                }
+
+            backgroundWorker1.RunWorkerAsync(filter);
+
+            //OpenFileDialog dialog = new OpenFileDialog();
+            //dialog.Filter = "Image files | *.png; *.jpg; *.bmp | All Files (*.*) | *.*";
+
+            //if (dialog.ShowDialog() == DialogResult.OK)
+            //{
+            //    Bitmap correction = new Bitmap(dialog.FileName);
+            //    PerfectReflectorFilter filter = new PerfectReflectorFilter();
+            //    images.Push(image);
+            //    for (int i = 0; i != correction.Width; i++)
+            //        for (int j = 0; j != correction.Height; j++)
+            //        {
+            //            if (filter.rMax < correction.GetPixel(i, j).R) filter.rMax = correction.GetPixel(i, j).R;
+            //            if (filter.gMax < correction.GetPixel(i, j).G) filter.gMax = correction.GetPixel(i, j).G;
+            //            if (filter.bMax < correction.GetPixel(i, j).B) filter.bMax = correction.GetPixel(i, j).B;
+            //        }
+
+            //    backgroundWorker1.RunWorkerAsync(filter);
+            //}
         }
     }
 }

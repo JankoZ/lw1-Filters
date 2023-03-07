@@ -14,7 +14,7 @@ namespace Filters
             double resX = width + 20 * Math.Sin((2 * Math.PI * height) / 60);
 
             if (((int)resX < sourceImage.Width) && (resX > 0)) resultColor = sourceImage.GetPixel((int)resX, height);
-            else resultColor = Color.Black;
+            else resultColor = sourceImage.GetPixel(width, height);
 
             return resultColor;
         }
