@@ -8,10 +8,10 @@ namespace Filters
 {
     internal class MorphologyErosion : Morphology
     {
-        public MorphologyErosion()
-        {
-            kernel = new float[,] { { 0, 1, 0 }, { 1, 1, 1 }, { 0, 1, 0 } };
-        }
+        //public MorphologyErosion()
+        //{
+        //    kernel = new float[,] { { 0, 1, 0 }, { 1, 1, 1 }, { 0, 1, 0 } };
+        //}
 
         protected override Color calculateNewPixelColor(Bitmap sourceImage, int i, int j)
         {
