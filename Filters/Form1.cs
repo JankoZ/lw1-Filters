@@ -9,6 +9,8 @@ namespace Filters
     {
         Bitmap image;
         Stack<Bitmap> images = new Stack<Bitmap>();
+        public static float[,] gKernel = new float[3, 3] { { 0, 1, 0 }, { 1, 0, 1 }, { 0, 1, 0 } };
+        public static Color dstColor = Color.White, srcColor = Color.White;
 
         public Form1()
         {
@@ -274,50 +276,49 @@ namespace Filters
 
         private void ğàñøèğåíèåToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Filters filter = new MorphologyDilation();
+            Filters filter = new MorphologyDilation(gKernel);
             images.Push(image);
             backgroundWorker1.RunWorkerAsync(filter);
         }
 
         private void ñóæåíèåToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Filters filter = new MorphologyErosion();
+            Filters filter = new MorphologyErosion(gKernel);
             images.Push(image);
             backgroundWorker1.RunWorkerAsync(filter);
         }
 
         private void îòêğûòèåToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Filters filter = new MorphologyErosion();
+            Filters filter = new MorphologyErosion(gKernel);
             images.Push(image);
             image = filter.processImage(image);
-            filter = new MorphologyDilation();
+            filter = new MorphologyDilation(gKernel);
             backgroundWorker1.RunWorkerAsync(filter);
         }
 
         private void çàêğûòèåToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Filters filter = new MorphologyDilation();
+            Filters filter = new MorphologyDilation(gKernel);
             images.Push(image);
             image = filter.processImage(image);
-            filter = new MorphologyErosion();
+            filter = new MorphologyErosion(gKernel);
             backgroundWorker1.RunWorkerAsync(filter);
         }
 
         private void gradToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Filters filter = new MorphologyDilation();
+            Filters filter = new MorphologyDilation(gKernel);
             Bitmap tmp = image;
             images.Push(image);
             image = filter.processImage(image);
 
-            filter = new MorphologyErosion();
+            filter = new MorphologyErosion(gKernel);
             tmp = filter.processImage(tmp);
 
             filter = new MorphologyGrad(image, tmp);
             backgroundWorker1.RunWorkerAsync(filter);
         }
-        #endregion
 
         private void ñâåòÿùèåñÿÊğàÿToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -354,10 +355,13 @@ namespace Filters
             Filters filter = new BrightnessFilter();
             images.Push(image);
             image = filter.processImage(image);
-            filter = new MorphologyDilation();
+            filter = new AntiBrightnessFilter();
+            image = filter.processImage(image);
+
+            filter = new MorphologyDilation(gKernel);
             Bitmap tmp;
             tmp = filter.processImage(image);
-            filter = new MorphologyErosion();
+            filter = new MorphologyErosion(gKernel);
             tmp = filter.processImage(tmp);
 
             filter = new MorphologyGrad(image, tmp);
@@ -366,21 +370,36 @@ namespace Filters
 
         private void blackHatToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Filters filter = new MorphologyErosion();
+            Filters filter = new MorphologyErosion(gKernel);
             Bitmap tmp = image;
             images.Push(image);
             image = filter.processImage(image);
-            filter = new MorphologyDilation();
+            filter = new MorphologyDilation(gKernel);
             image = filter.processImage(image);
 
             filter = new MorphologyGrad(image, tmp);
             backgroundWorker1.RunWorkerAsync(filter);
         }
 
-        private void èçìåíèòüÑòğóêòóğíûéİëåìåíòToolStripMenuItem_Click(object sender, EventArgs e)
+        private void íàñòğîèòüÑòğóêòóğíûéİëåìåíòToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Morphology morphology = new Morphology();
-            morphology.setStructElem();
+            ChangeStruct changeStruct = new ChangeStruct();
+            changeStruct.Show();
         }
+
+        private void êîğğåêöèÿÑÎïîğíûìÖâåòîìToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReferenceColorCorrectionFilter filter = new ReferenceColorCorrectionFilter();
+            images.Push(image);
+            backgroundWorker1.RunWorkerAsync(filter);
+        }
+
+        private void íàñòğîèòüÎïîğíûéÖâåòToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReferenceColorCorrection form = new ReferenceColorCorrection();
+            form.image = image;
+            form.Show();
+        }
+        #endregion
     }
 }

@@ -8,10 +8,10 @@ namespace Filters
 {
     internal class MorphologyErosion : Morphology
     {
-        //public MorphologyErosion()
-        //{
-        //    kernel = new float[,] { { 0, 1, 0 }, { 1, 1, 1 }, { 0, 1, 0 } };
-        //}
+        public MorphologyErosion(float[,] krn)
+        {
+            kernel = krn;
+        }
 
         protected override Color calculateNewPixelColor(Bitmap sourceImage, int i, int j)
         {
@@ -26,9 +26,12 @@ namespace Filters
                 {
                     int idX = Clamp(i + l, 0, sourceImage.Width - 1);
                     int idY = Clamp(j + k, 0, sourceImage.Height - 1);
-                    if ((kernel[l + radiusX, k + radiusY] == 1 && (sourceImage.GetPixel(idX, idY).R < min.R)))
+                    if (kernel[l + radiusX, k + radiusY] == 1)
                     {
-                        min = sourceImage.GetPixel(idX, idY);
+                        if (sourceImage.GetPixel(idX, idY).R < min.R)
+                            min = sourceImage.GetPixel(idX, idY);
+                        else if (sourceImage.GetPixel(idX, idY).R == min.R && sourceImage.GetPixel(idX, idY).G < min.G) min = sourceImage.GetPixel(idX, idY);
+                        else if (sourceImage.GetPixel(idX, idY).R == min.R && sourceImage.GetPixel(idX, idY).G == min.G && sourceImage.GetPixel(idX, idY).B < min.B) min = sourceImage.GetPixel(idX, idY);
                     }
                 }
                 resultColor = Color.FromArgb(min.R, min.G, min.B);

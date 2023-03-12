@@ -8,10 +8,10 @@ namespace Filters
 {
     internal class MorphologyDilation : Morphology
     {
-        //public MorphologyDilation()
-        //{
-        //    kernel = new float[,] { { 0, 1, 0 }, { 1, 1, 1 }, { 0, 1, 0 } };
-        //}
+        public MorphologyDilation(float[,] krn)
+        {
+            kernel = krn;
+        }
 
         protected override Color calculateNewPixelColor(Bitmap sourceImage, int i, int j)
         {
@@ -26,9 +26,12 @@ namespace Filters
                 {
                     int idX = Clamp(i + l, 0, sourceImage.Width - 1);
                     int idY = Clamp(j + k, 0, sourceImage.Height - 1);
-                    if ((kernel[l + radiusX, k + radiusY] == 1 && (sourceImage.GetPixel(idX, idY).R > max.R)))
+                    if (kernel[l + radiusX, k + radiusY] == 1)
                     {
-                        max = sourceImage.GetPixel(idX, idY);
+                        if (sourceImage.GetPixel(idX, idY).R > max.R)
+                            max = sourceImage.GetPixel(idX, idY);
+                        else if (sourceImage.GetPixel(idX, idY).R == max.R && sourceImage.GetPixel(idX, idY).G > max.G) max = sourceImage.GetPixel(idX, idY);
+                        else if (sourceImage.GetPixel(idX, idY).R == max.R && sourceImage.GetPixel(idX, idY).G == max.G && sourceImage.GetPixel(idX, idY).B > max.B) max = sourceImage.GetPixel(idX, idY);
                     }
                 }
                 resultColor = Color.FromArgb(max.R, max.G, max.B);
