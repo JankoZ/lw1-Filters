@@ -21,9 +21,16 @@ namespace Filters
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text != null && textBox2.Text != null) Form1.srcColor = image.GetPixel(int.Parse(textBox1.Text), int.Parse(textBox2.Text));
-            if (textBox3.Text != null && textBox4.Text != null && textBox5.Text != null)
-                Form1.dstColor = Color.FromArgb(int.Parse(textBox3.Text), int.Parse(textBox4.Text), int.Parse(textBox5.Text));
+            int w = (int)numericUpDown1.Value;
+            int h = (int)numericUpDown2.Value;
+
+            if (w > image.Width) w = image.Width - 1;
+            else if (w < 0) w = 0;
+            if (h > image.Height) h = image.Height - 1;
+            else if (h < 0) h = 0;
+
+            Form1.srcColor = image.GetPixel(w, h);
+            Form1.dstColor = Color.FromArgb((int)numericUpDown3.Value, (int)numericUpDown4.Value, (int)numericUpDown5.Value);
             Close();
         }
 

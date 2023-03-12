@@ -33,12 +33,14 @@
             textBox22 = new TextBox();
             textBox23 = new TextBox();
             textBox24 = new TextBox();
+            textBox20 = new TextBox();
+            textBox17 = new TextBox();
+            textBox9 = new TextBox();
+            textBox10 = new TextBox();
             textBox25 = new TextBox();
             textBox16 = new TextBox();
-            textBox17 = new TextBox();
             textBox18 = new TextBox();
             textBox19 = new TextBox();
-            textBox20 = new TextBox();
             textBox11 = new TextBox();
             textBox12 = new TextBox();
             textBox13 = new TextBox();
@@ -47,8 +49,6 @@
             textBox6 = new TextBox();
             textBox7 = new TextBox();
             textBox8 = new TextBox();
-            textBox9 = new TextBox();
-            textBox10 = new TextBox();
             textBox5 = new TextBox();
             textBox4 = new TextBox();
             textBox3 = new TextBox();
@@ -96,6 +96,7 @@
             // textBox21
             // 
             textBox21.Location = new Point(5, 137);
+            textBox21.MaxLength = 1;
             textBox21.Name = "textBox21";
             textBox21.Size = new Size(53, 27);
             textBox21.TabIndex = 24;
@@ -104,6 +105,7 @@
             // textBox22
             // 
             textBox22.Location = new Point(64, 137);
+            textBox22.MaxLength = 1;
             textBox22.Name = "textBox22";
             textBox22.Size = new Size(53, 27);
             textBox22.TabIndex = 23;
@@ -112,6 +114,7 @@
             // textBox23
             // 
             textBox23.Location = new Point(123, 137);
+            textBox23.MaxLength = 1;
             textBox23.Name = "textBox23";
             textBox23.Size = new Size(53, 27);
             textBox23.TabIndex = 22;
@@ -120,126 +123,34 @@
             // textBox24
             // 
             textBox24.Location = new Point(182, 137);
+            textBox24.MaxLength = 1;
             textBox24.Name = "textBox24";
             textBox24.Size = new Size(53, 27);
             textBox24.TabIndex = 21;
             textBox24.TextAlign = HorizontalAlignment.Center;
             // 
-            // textBox25
-            // 
-            textBox25.Location = new Point(241, 137);
-            textBox25.Name = "textBox25";
-            textBox25.Size = new Size(53, 27);
-            textBox25.TabIndex = 20;
-            textBox25.TextAlign = HorizontalAlignment.Center;
-            // 
-            // textBox16
-            // 
-            textBox16.Location = new Point(5, 104);
-            textBox16.Name = "textBox16";
-            textBox16.Size = new Size(53, 27);
-            textBox16.TabIndex = 19;
-            textBox16.TextAlign = HorizontalAlignment.Center;
-            // 
-            // textBox17
-            // 
-            textBox17.Location = new Point(64, 104);
-            textBox17.Name = "textBox17";
-            textBox17.Size = new Size(53, 27);
-            textBox17.TabIndex = 18;
-            textBox17.TextAlign = HorizontalAlignment.Center;
-            // 
-            // textBox18
-            // 
-            textBox18.Location = new Point(123, 104);
-            textBox18.Name = "textBox18";
-            textBox18.Size = new Size(53, 27);
-            textBox18.TabIndex = 17;
-            textBox18.TextAlign = HorizontalAlignment.Center;
-            // 
-            // textBox19
-            // 
-            textBox19.Location = new Point(182, 104);
-            textBox19.Name = "textBox19";
-            textBox19.Size = new Size(53, 27);
-            textBox19.TabIndex = 16;
-            textBox19.TextAlign = HorizontalAlignment.Center;
-            // 
             // textBox20
             // 
             textBox20.Location = new Point(241, 104);
+            textBox20.MaxLength = 1;
             textBox20.Name = "textBox20";
             textBox20.Size = new Size(53, 27);
             textBox20.TabIndex = 15;
             textBox20.TextAlign = HorizontalAlignment.Center;
             // 
-            // textBox11
+            // textBox17
             // 
-            textBox11.Location = new Point(5, 71);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(53, 27);
-            textBox11.TabIndex = 14;
-            textBox11.TextAlign = HorizontalAlignment.Center;
-            // 
-            // textBox12
-            // 
-            textBox12.Location = new Point(64, 71);
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(53, 27);
-            textBox12.TabIndex = 13;
-            textBox12.TextAlign = HorizontalAlignment.Center;
-            // 
-            // textBox13
-            // 
-            textBox13.Location = new Point(123, 71);
-            textBox13.Name = "textBox13";
-            textBox13.Size = new Size(53, 27);
-            textBox13.TabIndex = 12;
-            textBox13.TextAlign = HorizontalAlignment.Center;
-            // 
-            // textBox14
-            // 
-            textBox14.Location = new Point(182, 71);
-            textBox14.Name = "textBox14";
-            textBox14.Size = new Size(53, 27);
-            textBox14.TabIndex = 11;
-            textBox14.TextAlign = HorizontalAlignment.Center;
-            // 
-            // textBox15
-            // 
-            textBox15.Location = new Point(241, 71);
-            textBox15.Name = "textBox15";
-            textBox15.Size = new Size(53, 27);
-            textBox15.TabIndex = 10;
-            textBox15.TextAlign = HorizontalAlignment.Center;
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(5, 38);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(53, 27);
-            textBox6.TabIndex = 9;
-            textBox6.TextAlign = HorizontalAlignment.Center;
-            // 
-            // textBox7
-            // 
-            textBox7.Location = new Point(64, 38);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(53, 27);
-            textBox7.TabIndex = 8;
-            textBox7.TextAlign = HorizontalAlignment.Center;
-            // 
-            // textBox8
-            // 
-            textBox8.Location = new Point(123, 38);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(53, 27);
-            textBox8.TabIndex = 7;
-            textBox8.TextAlign = HorizontalAlignment.Center;
+            textBox17.Location = new Point(64, 104);
+            textBox17.MaxLength = 1;
+            textBox17.Name = "textBox17";
+            textBox17.Size = new Size(53, 27);
+            textBox17.TabIndex = 18;
+            textBox17.TextAlign = HorizontalAlignment.Center;
             // 
             // textBox9
             // 
             textBox9.Location = new Point(182, 38);
+            textBox9.MaxLength = 1;
             textBox9.Name = "textBox9";
             textBox9.Size = new Size(53, 27);
             textBox9.TabIndex = 6;
@@ -248,14 +159,124 @@
             // textBox10
             // 
             textBox10.Location = new Point(241, 38);
+            textBox10.MaxLength = 1;
             textBox10.Name = "textBox10";
             textBox10.Size = new Size(53, 27);
             textBox10.TabIndex = 5;
             textBox10.TextAlign = HorizontalAlignment.Center;
             // 
+            // textBox25
+            // 
+            textBox25.Location = new Point(241, 137);
+            textBox25.MaxLength = 1;
+            textBox25.Name = "textBox25";
+            textBox25.Size = new Size(53, 27);
+            textBox25.TabIndex = 20;
+            textBox25.TextAlign = HorizontalAlignment.Center;
+            // 
+            // textBox16
+            // 
+            textBox16.Location = new Point(5, 104);
+            textBox16.MaxLength = 1;
+            textBox16.Name = "textBox16";
+            textBox16.Size = new Size(53, 27);
+            textBox16.TabIndex = 19;
+            textBox16.TextAlign = HorizontalAlignment.Center;
+            // 
+            // textBox18
+            // 
+            textBox18.Location = new Point(123, 104);
+            textBox18.MaxLength = 1;
+            textBox18.Name = "textBox18";
+            textBox18.Size = new Size(53, 27);
+            textBox18.TabIndex = 17;
+            textBox18.TextAlign = HorizontalAlignment.Center;
+            // 
+            // textBox19
+            // 
+            textBox19.Location = new Point(182, 104);
+            textBox19.MaxLength = 1;
+            textBox19.Name = "textBox19";
+            textBox19.Size = new Size(53, 27);
+            textBox19.TabIndex = 16;
+            textBox19.TextAlign = HorizontalAlignment.Center;
+            // 
+            // textBox11
+            // 
+            textBox11.Location = new Point(5, 71);
+            textBox11.MaxLength = 1;
+            textBox11.Name = "textBox11";
+            textBox11.Size = new Size(53, 27);
+            textBox11.TabIndex = 14;
+            textBox11.TextAlign = HorizontalAlignment.Center;
+            // 
+            // textBox12
+            // 
+            textBox12.Location = new Point(64, 71);
+            textBox12.MaxLength = 1;
+            textBox12.Name = "textBox12";
+            textBox12.Size = new Size(53, 27);
+            textBox12.TabIndex = 13;
+            textBox12.TextAlign = HorizontalAlignment.Center;
+            // 
+            // textBox13
+            // 
+            textBox13.Location = new Point(123, 71);
+            textBox13.MaxLength = 1;
+            textBox13.Name = "textBox13";
+            textBox13.Size = new Size(53, 27);
+            textBox13.TabIndex = 12;
+            textBox13.TextAlign = HorizontalAlignment.Center;
+            // 
+            // textBox14
+            // 
+            textBox14.Location = new Point(182, 71);
+            textBox14.MaxLength = 1;
+            textBox14.Name = "textBox14";
+            textBox14.Size = new Size(53, 27);
+            textBox14.TabIndex = 11;
+            textBox14.TextAlign = HorizontalAlignment.Center;
+            // 
+            // textBox15
+            // 
+            textBox15.Location = new Point(241, 71);
+            textBox15.MaxLength = 1;
+            textBox15.Name = "textBox15";
+            textBox15.Size = new Size(53, 27);
+            textBox15.TabIndex = 10;
+            textBox15.TextAlign = HorizontalAlignment.Center;
+            // 
+            // textBox6
+            // 
+            textBox6.Location = new Point(5, 38);
+            textBox6.MaxLength = 1;
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(53, 27);
+            textBox6.TabIndex = 9;
+            textBox6.TextAlign = HorizontalAlignment.Center;
+            // 
+            // textBox7
+            // 
+            textBox7.Location = new Point(64, 38);
+            textBox7.MaxLength = 1;
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(53, 27);
+            textBox7.TabIndex = 8;
+            textBox7.TextAlign = HorizontalAlignment.Center;
+            // 
+            // textBox8
+            // 
+            textBox8.Location = new Point(123, 38);
+            textBox8.MaxLength = 1;
+            textBox8.Name = "textBox8";
+            textBox8.Size = new Size(53, 27);
+            textBox8.TabIndex = 7;
+            textBox8.TextAlign = HorizontalAlignment.Center;
+            // 
             // textBox5
             // 
             textBox5.Location = new Point(241, 5);
+            textBox5.MaxLength = 1;
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(53, 27);
             textBox5.TabIndex = 4;
@@ -264,6 +285,7 @@
             // textBox4
             // 
             textBox4.Location = new Point(182, 5);
+            textBox4.MaxLength = 1;
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(53, 27);
             textBox4.TabIndex = 3;
@@ -272,6 +294,7 @@
             // textBox3
             // 
             textBox3.Location = new Point(123, 5);
+            textBox3.MaxLength = 1;
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(53, 27);
             textBox3.TabIndex = 2;
@@ -280,6 +303,7 @@
             // textBox2
             // 
             textBox2.Location = new Point(64, 5);
+            textBox2.MaxLength = 1;
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(53, 27);
             textBox2.TabIndex = 1;
@@ -288,6 +312,7 @@
             // textBox1
             // 
             textBox1.Location = new Point(5, 5);
+            textBox1.MaxLength = 1;
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(53, 27);
             textBox1.TabIndex = 0;
