@@ -18,3 +18,4 @@ D:\Programs\Filters\Filters\obj\Debug\net6.0-windows\ref\Filters.dll
 D:\Programs\Filters\Filters\obj\Debug\net6.0-windows\Filters.Properties.Resources.resources
 D:\Programs\Filters\Filters\obj\Debug\net6.0-windows\Filters.ChangeStruct.resources
 D:\Programs\Filters\Filters\obj\Debug\net6.0-windows\Filters.ReferenceColorCorrection.resources
+D:\Programs\Filters\Filters\obj\Debug\net6.0-windows\Filters.CreateMatrix.resources

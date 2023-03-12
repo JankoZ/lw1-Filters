@@ -383,8 +383,8 @@ namespace Filters
 
         private void íàñòğîèòüÑòğóêòóğíûéİëåìåíòToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ChangeStruct changeStruct = new ChangeStruct();
-            changeStruct.Show();
+            CreateMatrix createMatrix = new CreateMatrix();
+            createMatrix.Show();
         }
 
         private void êîğğåêöèÿÑÎïîğíûìÖâåòîìToolStripMenuItem_Click(object sender, EventArgs e)

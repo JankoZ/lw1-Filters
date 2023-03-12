@@ -13,10 +13,24 @@ namespace Filters
     public partial class ChangeStruct : Form
     {
         public float[,] kernel;
+        private int matirxSize;
 
         public ChangeStruct()
         {
             InitializeComponent();
+        }
+
+        public ChangeStruct(int size)
+        {
+            InitializeComponent();
+            matirxSize = size;
+            switch (size)
+            {
+                case 1: numericUpDown2.Visible = false; numericUpDown3.Visible = false; numericUpDown4.Visible = false; numericUpDown5.Visible = false; numericUpDown6.Visible = false; numericUpDown7.Visible = false; numericUpDown8.Visible = false; numericUpDown9.Visible = false; numericUpDown10.Visible = false; numericUpDown11.Visible = false; numericUpDown12.Visible = false; numericUpDown13.Visible = false; numericUpDown14.Visible = false; numericUpDown15.Visible = false; numericUpDown16.Visible = false; numericUpDown17.Visible = false; numericUpDown18.Visible = false; numericUpDown19.Visible = false; numericUpDown20.Visible = false; numericUpDown21.Visible = false; numericUpDown22.Visible = false; numericUpDown23.Visible = false; numericUpDown24.Visible = false; numericUpDown25.Visible = false; break;
+                case 2: numericUpDown3.Visible = false; numericUpDown4.Visible = false; numericUpDown5.Visible = false; numericUpDown8.Visible = false; numericUpDown9.Visible = false; numericUpDown10.Visible = false; numericUpDown11.Visible = false; numericUpDown12.Visible = false; numericUpDown13.Visible = false; numericUpDown14.Visible = false; numericUpDown15.Visible = false; numericUpDown16.Visible = false; numericUpDown17.Visible = false; numericUpDown18.Visible = false; numericUpDown19.Visible = false; numericUpDown20.Visible = false; numericUpDown21.Visible = false; numericUpDown22.Visible = false; numericUpDown23.Visible = false; numericUpDown24.Visible = false; numericUpDown25.Visible = false; break;
+                case 3: numericUpDown4.Visible = false; numericUpDown5.Visible = false; numericUpDown9.Visible = false; numericUpDown10.Visible = false; numericUpDown14.Visible = false; numericUpDown15.Visible = false; numericUpDown16.Visible = false; numericUpDown17.Visible = false; numericUpDown18.Visible = false; numericUpDown19.Visible = false; numericUpDown20.Visible = false; numericUpDown21.Visible = false; numericUpDown22.Visible = false; numericUpDown23.Visible = false; numericUpDown24.Visible = false; numericUpDown25.Visible = false; break;
+                case 4: numericUpDown5.Visible = false; numericUpDown10.Visible = false; numericUpDown15.Visible = false; numericUpDown20.Visible = false; numericUpDown21.Visible = false; numericUpDown22.Visible = false; numericUpDown23.Visible = false; numericUpDown24.Visible = false; numericUpDown25.Visible = false; break;
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -33,44 +47,16 @@ namespace Filters
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox5.Text == null && textBox10.Text == null && textBox15.Text == null && textBox20.Text == null && textBox25.Text == null && textBox21.Text == null && textBox22.Text == null && textBox23.Text == null && textBox24.Text == null)
+            switch (matirxSize)
             {
-                kernel = new float[4, 4];
-                SetCell(textBox1, 0, 0); SetCell(textBox2, 0, 1); SetCell(textBox3, 0, 2); SetCell(textBox4, 0, 3);
-                SetCell(textBox6, 1, 0); SetCell(textBox7, 1, 1); SetCell(textBox8, 1, 2); SetCell(textBox9, 1, 3);
-                SetCell(textBox11, 2, 0); SetCell(textBox12, 2, 1); SetCell(textBox13, 2, 2); SetCell(textBox14, 2, 3);
-                SetCell(textBox16, 3, 0); SetCell(textBox17, 3, 1); SetCell(textBox18, 3, 2); SetCell(textBox19, 3, 3);
-            }
-            else if (textBox4.Text == null && textBox9.Text == null && textBox14.Text == null && textBox16.Text == null && textBox17.Text == null && textBox18.Text == null && textBox19.Text == null)
-            {
-                kernel = new float[3, 3];
-                SetCell(textBox1, 0, 0); SetCell(textBox2, 0, 1); SetCell(textBox3, 0, 2);
-                SetCell(textBox6, 1, 0); SetCell(textBox7, 1, 1); SetCell(textBox8, 1, 2);
-                SetCell(textBox11, 2, 0); SetCell(textBox12, 2, 1); SetCell(textBox13, 2, 2);
-            }
-            else if (textBox3.Text == null && textBox8.Text == null && textBox11.Text == null && textBox12.Text == null && textBox13.Text == null)
-            {
-                kernel = new float[2, 2];
-                SetCell(textBox1, 0, 0); SetCell(textBox2, 0, 1);
-                SetCell(textBox6, 1, 0); SetCell(textBox7, 1, 1);
-            }
-            else
-            {
-                kernel = new float[5, 5];
-                SetCell(textBox1, 0, 0); SetCell(textBox2, 0, 1); SetCell(textBox3, 0, 2); SetCell(textBox4, 0, 3); SetCell(textBox5, 0, 4);
-                SetCell(textBox6, 1, 0); SetCell(textBox7, 1, 1); SetCell(textBox8, 1, 2); SetCell(textBox9, 1, 3); SetCell(textBox10, 1, 4);
-                SetCell(textBox11, 2, 0); SetCell(textBox12, 2, 1); SetCell(textBox13, 2, 2); SetCell(textBox14, 2, 3); SetCell(textBox15, 2, 4);
-                SetCell(textBox16, 3, 0); SetCell(textBox17, 3, 1); SetCell(textBox18, 3, 2); SetCell(textBox19, 3, 3); SetCell(textBox20, 3, 4);
-                SetCell(textBox21, 4, 0); SetCell(textBox22, 4, 1); SetCell(textBox23, 4, 2); SetCell(textBox24, 4, 3); SetCell(textBox25, 4, 4);
+                case 1: kernel = new float[1, 1] { { (float)numericUpDown1.Value } }; break;
+                case 2: kernel = new float[2, 2] { { (float)numericUpDown1.Value, (float)numericUpDown2.Value }, { (float)numericUpDown6.Value, (float)numericUpDown7.Value } }; break;
+                case 3: kernel = new float[3, 3] { { (float)numericUpDown1.Value, (float)numericUpDown2.Value, (float)numericUpDown3.Value }, { (float)numericUpDown6.Value, (float)numericUpDown7.Value, (float)numericUpDown8.Value }, { (float)numericUpDown11.Value, (float)numericUpDown12.Value, (float)numericUpDown13.Value } }; break;
+                case 4: kernel = new float[4, 4] { { (float)numericUpDown1.Value, (float)numericUpDown2.Value, (float)numericUpDown3.Value, (float)numericUpDown4.Value }, { (float)numericUpDown6.Value, (float)numericUpDown7.Value, (float)numericUpDown8.Value, (float)numericUpDown9.Value }, { (float)numericUpDown11.Value, (float)numericUpDown12.Value, (float)numericUpDown13.Value, (float)numericUpDown14.Value }, { (float)numericUpDown16.Value, (float)numericUpDown17.Value, (float)numericUpDown18.Value, (float)numericUpDown19.Value } }; break;
+                case 5: kernel = new float[5, 5] { { (float)numericUpDown1.Value, (float)numericUpDown2.Value, (float)numericUpDown3.Value, (float)numericUpDown4.Value, (float)numericUpDown5.Value }, { (float)numericUpDown6.Value, (float)numericUpDown7.Value, (float)numericUpDown8.Value, (float)numericUpDown9.Value, (float)numericUpDown10.Value }, { (float)numericUpDown11.Value, (float)numericUpDown12.Value, (float)numericUpDown13.Value, (float)numericUpDown14.Value, (float)numericUpDown15.Value }, { (float)numericUpDown16.Value, (float)numericUpDown17.Value, (float)numericUpDown18.Value, (float)numericUpDown19.Value, (float)numericUpDown20.Value }, { (float)numericUpDown21.Value, (float)numericUpDown22.Value, (float)numericUpDown23.Value, (float)numericUpDown24.Value, (float)numericUpDown25.Value } }; break;
             }
             Form1.gKernel = kernel;
             Close();
-        }
-
-        private void SetCell(TextBox textBox, int i, int j)
-        {
-            if (textBox.Text == "1") kernel[i, j] = 1;
-            else kernel[i, j] = 0;
         }
     }
 }

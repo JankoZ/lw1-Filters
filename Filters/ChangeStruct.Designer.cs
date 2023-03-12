@@ -29,294 +29,369 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            textBox21 = new TextBox();
-            textBox22 = new TextBox();
-            textBox23 = new TextBox();
-            textBox24 = new TextBox();
-            textBox20 = new TextBox();
-            textBox17 = new TextBox();
-            textBox9 = new TextBox();
-            textBox10 = new TextBox();
-            textBox25 = new TextBox();
-            textBox16 = new TextBox();
-            textBox18 = new TextBox();
-            textBox19 = new TextBox();
-            textBox11 = new TextBox();
-            textBox12 = new TextBox();
-            textBox13 = new TextBox();
-            textBox14 = new TextBox();
-            textBox15 = new TextBox();
-            textBox6 = new TextBox();
-            textBox7 = new TextBox();
-            textBox8 = new TextBox();
-            textBox5 = new TextBox();
-            textBox4 = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            numericUpDown25 = new NumericUpDown();
+            numericUpDown24 = new NumericUpDown();
+            numericUpDown23 = new NumericUpDown();
+            numericUpDown22 = new NumericUpDown();
+            numericUpDown21 = new NumericUpDown();
+            numericUpDown20 = new NumericUpDown();
+            numericUpDown19 = new NumericUpDown();
+            numericUpDown18 = new NumericUpDown();
+            numericUpDown17 = new NumericUpDown();
+            numericUpDown16 = new NumericUpDown();
+            numericUpDown15 = new NumericUpDown();
+            numericUpDown14 = new NumericUpDown();
+            numericUpDown13 = new NumericUpDown();
+            numericUpDown12 = new NumericUpDown();
+            numericUpDown11 = new NumericUpDown();
+            numericUpDown10 = new NumericUpDown();
+            numericUpDown9 = new NumericUpDown();
+            numericUpDown8 = new NumericUpDown();
+            numericUpDown7 = new NumericUpDown();
+            numericUpDown6 = new NumericUpDown();
+            numericUpDown5 = new NumericUpDown();
+            numericUpDown4 = new NumericUpDown();
+            numericUpDown3 = new NumericUpDown();
+            numericUpDown2 = new NumericUpDown();
+            numericUpDown1 = new NumericUpDown();
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown25).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown24).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown23).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown22).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown21).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown20).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown19).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown18).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown17).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown16).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown15).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown14).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown13).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown12).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown11).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown10).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown9).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown8).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = SystemColors.ControlDark;
-            panel1.Controls.Add(textBox21);
-            panel1.Controls.Add(textBox22);
-            panel1.Controls.Add(textBox23);
-            panel1.Controls.Add(textBox24);
-            panel1.Controls.Add(textBox20);
-            panel1.Controls.Add(textBox17);
-            panel1.Controls.Add(textBox9);
-            panel1.Controls.Add(textBox10);
-            panel1.Controls.Add(textBox25);
-            panel1.Controls.Add(textBox16);
-            panel1.Controls.Add(textBox18);
-            panel1.Controls.Add(textBox19);
-            panel1.Controls.Add(textBox11);
-            panel1.Controls.Add(textBox12);
-            panel1.Controls.Add(textBox13);
-            panel1.Controls.Add(textBox14);
-            panel1.Controls.Add(textBox15);
-            panel1.Controls.Add(textBox6);
-            panel1.Controls.Add(textBox7);
-            panel1.Controls.Add(textBox8);
-            panel1.Controls.Add(textBox5);
-            panel1.Controls.Add(textBox4);
-            panel1.Controls.Add(textBox3);
-            panel1.Controls.Add(textBox2);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(numericUpDown25);
+            panel1.Controls.Add(numericUpDown24);
+            panel1.Controls.Add(numericUpDown23);
+            panel1.Controls.Add(numericUpDown22);
+            panel1.Controls.Add(numericUpDown21);
+            panel1.Controls.Add(numericUpDown20);
+            panel1.Controls.Add(numericUpDown19);
+            panel1.Controls.Add(numericUpDown18);
+            panel1.Controls.Add(numericUpDown17);
+            panel1.Controls.Add(numericUpDown16);
+            panel1.Controls.Add(numericUpDown15);
+            panel1.Controls.Add(numericUpDown14);
+            panel1.Controls.Add(numericUpDown13);
+            panel1.Controls.Add(numericUpDown12);
+            panel1.Controls.Add(numericUpDown11);
+            panel1.Controls.Add(numericUpDown10);
+            panel1.Controls.Add(numericUpDown9);
+            panel1.Controls.Add(numericUpDown8);
+            panel1.Controls.Add(numericUpDown7);
+            panel1.Controls.Add(numericUpDown6);
+            panel1.Controls.Add(numericUpDown5);
+            panel1.Controls.Add(numericUpDown4);
+            panel1.Controls.Add(numericUpDown3);
+            panel1.Controls.Add(numericUpDown2);
+            panel1.Controls.Add(numericUpDown1);
             panel1.Location = new Point(20, 20);
             panel1.Name = "panel1";
             panel1.Size = new Size(300, 171);
             panel1.TabIndex = 0;
             // 
-            // textBox21
+            // numericUpDown25
             // 
-            textBox21.Location = new Point(5, 137);
-            textBox21.MaxLength = 1;
-            textBox21.Name = "textBox21";
-            textBox21.Size = new Size(53, 27);
-            textBox21.TabIndex = 24;
-            textBox21.TextAlign = HorizontalAlignment.Center;
+            numericUpDown25.DecimalPlaces = 2;
+            numericUpDown25.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
+            numericUpDown25.Location = new Point(239, 136);
+            numericUpDown25.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDown25.Name = "numericUpDown25";
+            numericUpDown25.Size = new Size(53, 27);
+            numericUpDown25.TabIndex = 28;
+            numericUpDown25.TextAlign = HorizontalAlignment.Center;
             // 
-            // textBox22
+            // numericUpDown24
             // 
-            textBox22.Location = new Point(64, 137);
-            textBox22.MaxLength = 1;
-            textBox22.Name = "textBox22";
-            textBox22.Size = new Size(53, 27);
-            textBox22.TabIndex = 23;
-            textBox22.TextAlign = HorizontalAlignment.Center;
+            numericUpDown24.DecimalPlaces = 2;
+            numericUpDown24.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
+            numericUpDown24.Location = new Point(180, 136);
+            numericUpDown24.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDown24.Name = "numericUpDown24";
+            numericUpDown24.Size = new Size(53, 27);
+            numericUpDown24.TabIndex = 27;
+            numericUpDown24.TextAlign = HorizontalAlignment.Center;
             // 
-            // textBox23
+            // numericUpDown23
             // 
-            textBox23.Location = new Point(123, 137);
-            textBox23.MaxLength = 1;
-            textBox23.Name = "textBox23";
-            textBox23.Size = new Size(53, 27);
-            textBox23.TabIndex = 22;
-            textBox23.TextAlign = HorizontalAlignment.Center;
+            numericUpDown23.DecimalPlaces = 2;
+            numericUpDown23.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
+            numericUpDown23.Location = new Point(121, 136);
+            numericUpDown23.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDown23.Name = "numericUpDown23";
+            numericUpDown23.Size = new Size(53, 27);
+            numericUpDown23.TabIndex = 26;
+            numericUpDown23.TextAlign = HorizontalAlignment.Center;
             // 
-            // textBox24
+            // numericUpDown22
             // 
-            textBox24.Location = new Point(182, 137);
-            textBox24.MaxLength = 1;
-            textBox24.Name = "textBox24";
-            textBox24.Size = new Size(53, 27);
-            textBox24.TabIndex = 21;
-            textBox24.TextAlign = HorizontalAlignment.Center;
+            numericUpDown22.DecimalPlaces = 2;
+            numericUpDown22.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
+            numericUpDown22.Location = new Point(62, 136);
+            numericUpDown22.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDown22.Name = "numericUpDown22";
+            numericUpDown22.Size = new Size(53, 27);
+            numericUpDown22.TabIndex = 25;
+            numericUpDown22.TextAlign = HorizontalAlignment.Center;
             // 
-            // textBox20
+            // numericUpDown21
             // 
-            textBox20.Location = new Point(241, 104);
-            textBox20.MaxLength = 1;
-            textBox20.Name = "textBox20";
-            textBox20.Size = new Size(53, 27);
-            textBox20.TabIndex = 15;
-            textBox20.TextAlign = HorizontalAlignment.Center;
+            numericUpDown21.DecimalPlaces = 2;
+            numericUpDown21.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
+            numericUpDown21.Location = new Point(3, 136);
+            numericUpDown21.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDown21.Name = "numericUpDown21";
+            numericUpDown21.Size = new Size(53, 27);
+            numericUpDown21.TabIndex = 24;
+            numericUpDown21.TextAlign = HorizontalAlignment.Center;
             // 
-            // textBox17
+            // numericUpDown20
             // 
-            textBox17.Location = new Point(64, 104);
-            textBox17.MaxLength = 1;
-            textBox17.Name = "textBox17";
-            textBox17.Size = new Size(53, 27);
-            textBox17.TabIndex = 18;
-            textBox17.TextAlign = HorizontalAlignment.Center;
+            numericUpDown20.DecimalPlaces = 2;
+            numericUpDown20.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
+            numericUpDown20.Location = new Point(239, 103);
+            numericUpDown20.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDown20.Name = "numericUpDown20";
+            numericUpDown20.Size = new Size(53, 27);
+            numericUpDown20.TabIndex = 23;
+            numericUpDown20.TextAlign = HorizontalAlignment.Center;
             // 
-            // textBox9
+            // numericUpDown19
             // 
-            textBox9.Location = new Point(182, 38);
-            textBox9.MaxLength = 1;
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(53, 27);
-            textBox9.TabIndex = 6;
-            textBox9.TextAlign = HorizontalAlignment.Center;
+            numericUpDown19.DecimalPlaces = 2;
+            numericUpDown19.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
+            numericUpDown19.Location = new Point(180, 103);
+            numericUpDown19.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDown19.Name = "numericUpDown19";
+            numericUpDown19.Size = new Size(53, 27);
+            numericUpDown19.TabIndex = 22;
+            numericUpDown19.TextAlign = HorizontalAlignment.Center;
             // 
-            // textBox10
+            // numericUpDown18
             // 
-            textBox10.Location = new Point(241, 38);
-            textBox10.MaxLength = 1;
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(53, 27);
-            textBox10.TabIndex = 5;
-            textBox10.TextAlign = HorizontalAlignment.Center;
+            numericUpDown18.DecimalPlaces = 2;
+            numericUpDown18.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
+            numericUpDown18.Location = new Point(121, 103);
+            numericUpDown18.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDown18.Name = "numericUpDown18";
+            numericUpDown18.Size = new Size(53, 27);
+            numericUpDown18.TabIndex = 21;
+            numericUpDown18.TextAlign = HorizontalAlignment.Center;
             // 
-            // textBox25
+            // numericUpDown17
             // 
-            textBox25.Location = new Point(241, 137);
-            textBox25.MaxLength = 1;
-            textBox25.Name = "textBox25";
-            textBox25.Size = new Size(53, 27);
-            textBox25.TabIndex = 20;
-            textBox25.TextAlign = HorizontalAlignment.Center;
+            numericUpDown17.DecimalPlaces = 2;
+            numericUpDown17.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
+            numericUpDown17.Location = new Point(62, 103);
+            numericUpDown17.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDown17.Name = "numericUpDown17";
+            numericUpDown17.Size = new Size(53, 27);
+            numericUpDown17.TabIndex = 20;
+            numericUpDown17.TextAlign = HorizontalAlignment.Center;
             // 
-            // textBox16
+            // numericUpDown16
             // 
-            textBox16.Location = new Point(5, 104);
-            textBox16.MaxLength = 1;
-            textBox16.Name = "textBox16";
-            textBox16.Size = new Size(53, 27);
-            textBox16.TabIndex = 19;
-            textBox16.TextAlign = HorizontalAlignment.Center;
+            numericUpDown16.DecimalPlaces = 2;
+            numericUpDown16.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
+            numericUpDown16.Location = new Point(3, 103);
+            numericUpDown16.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDown16.Name = "numericUpDown16";
+            numericUpDown16.Size = new Size(53, 27);
+            numericUpDown16.TabIndex = 19;
+            numericUpDown16.TextAlign = HorizontalAlignment.Center;
             // 
-            // textBox18
+            // numericUpDown15
             // 
-            textBox18.Location = new Point(123, 104);
-            textBox18.MaxLength = 1;
-            textBox18.Name = "textBox18";
-            textBox18.Size = new Size(53, 27);
-            textBox18.TabIndex = 17;
-            textBox18.TextAlign = HorizontalAlignment.Center;
+            numericUpDown15.DecimalPlaces = 2;
+            numericUpDown15.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
+            numericUpDown15.Location = new Point(239, 70);
+            numericUpDown15.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDown15.Name = "numericUpDown15";
+            numericUpDown15.Size = new Size(53, 27);
+            numericUpDown15.TabIndex = 18;
+            numericUpDown15.TextAlign = HorizontalAlignment.Center;
             // 
-            // textBox19
+            // numericUpDown14
             // 
-            textBox19.Location = new Point(182, 104);
-            textBox19.MaxLength = 1;
-            textBox19.Name = "textBox19";
-            textBox19.Size = new Size(53, 27);
-            textBox19.TabIndex = 16;
-            textBox19.TextAlign = HorizontalAlignment.Center;
+            numericUpDown14.DecimalPlaces = 2;
+            numericUpDown14.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
+            numericUpDown14.Location = new Point(180, 70);
+            numericUpDown14.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDown14.Name = "numericUpDown14";
+            numericUpDown14.Size = new Size(53, 27);
+            numericUpDown14.TabIndex = 17;
+            numericUpDown14.TextAlign = HorizontalAlignment.Center;
             // 
-            // textBox11
+            // numericUpDown13
             // 
-            textBox11.Location = new Point(5, 71);
-            textBox11.MaxLength = 1;
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(53, 27);
-            textBox11.TabIndex = 14;
-            textBox11.TextAlign = HorizontalAlignment.Center;
+            numericUpDown13.DecimalPlaces = 2;
+            numericUpDown13.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
+            numericUpDown13.Location = new Point(121, 70);
+            numericUpDown13.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDown13.Name = "numericUpDown13";
+            numericUpDown13.Size = new Size(53, 27);
+            numericUpDown13.TabIndex = 16;
+            numericUpDown13.TextAlign = HorizontalAlignment.Center;
             // 
-            // textBox12
+            // numericUpDown12
             // 
-            textBox12.Location = new Point(64, 71);
-            textBox12.MaxLength = 1;
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(53, 27);
-            textBox12.TabIndex = 13;
-            textBox12.TextAlign = HorizontalAlignment.Center;
+            numericUpDown12.DecimalPlaces = 2;
+            numericUpDown12.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
+            numericUpDown12.Location = new Point(62, 70);
+            numericUpDown12.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDown12.Name = "numericUpDown12";
+            numericUpDown12.Size = new Size(53, 27);
+            numericUpDown12.TabIndex = 15;
+            numericUpDown12.TextAlign = HorizontalAlignment.Center;
             // 
-            // textBox13
+            // numericUpDown11
             // 
-            textBox13.Location = new Point(123, 71);
-            textBox13.MaxLength = 1;
-            textBox13.Name = "textBox13";
-            textBox13.Size = new Size(53, 27);
-            textBox13.TabIndex = 12;
-            textBox13.TextAlign = HorizontalAlignment.Center;
+            numericUpDown11.DecimalPlaces = 2;
+            numericUpDown11.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
+            numericUpDown11.Location = new Point(3, 70);
+            numericUpDown11.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDown11.Name = "numericUpDown11";
+            numericUpDown11.Size = new Size(53, 27);
+            numericUpDown11.TabIndex = 14;
+            numericUpDown11.TextAlign = HorizontalAlignment.Center;
             // 
-            // textBox14
+            // numericUpDown10
             // 
-            textBox14.Location = new Point(182, 71);
-            textBox14.MaxLength = 1;
-            textBox14.Name = "textBox14";
-            textBox14.Size = new Size(53, 27);
-            textBox14.TabIndex = 11;
-            textBox14.TextAlign = HorizontalAlignment.Center;
+            numericUpDown10.DecimalPlaces = 2;
+            numericUpDown10.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
+            numericUpDown10.Location = new Point(239, 37);
+            numericUpDown10.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDown10.Name = "numericUpDown10";
+            numericUpDown10.Size = new Size(53, 27);
+            numericUpDown10.TabIndex = 13;
+            numericUpDown10.TextAlign = HorizontalAlignment.Center;
             // 
-            // textBox15
+            // numericUpDown9
             // 
-            textBox15.Location = new Point(241, 71);
-            textBox15.MaxLength = 1;
-            textBox15.Name = "textBox15";
-            textBox15.Size = new Size(53, 27);
-            textBox15.TabIndex = 10;
-            textBox15.TextAlign = HorizontalAlignment.Center;
+            numericUpDown9.DecimalPlaces = 2;
+            numericUpDown9.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
+            numericUpDown9.Location = new Point(180, 37);
+            numericUpDown9.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDown9.Name = "numericUpDown9";
+            numericUpDown9.Size = new Size(53, 27);
+            numericUpDown9.TabIndex = 12;
+            numericUpDown9.TextAlign = HorizontalAlignment.Center;
             // 
-            // textBox6
+            // numericUpDown8
             // 
-            textBox6.Location = new Point(5, 38);
-            textBox6.MaxLength = 1;
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(53, 27);
-            textBox6.TabIndex = 9;
-            textBox6.TextAlign = HorizontalAlignment.Center;
+            numericUpDown8.DecimalPlaces = 2;
+            numericUpDown8.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
+            numericUpDown8.Location = new Point(121, 37);
+            numericUpDown8.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDown8.Name = "numericUpDown8";
+            numericUpDown8.Size = new Size(53, 27);
+            numericUpDown8.TabIndex = 11;
+            numericUpDown8.TextAlign = HorizontalAlignment.Center;
             // 
-            // textBox7
+            // numericUpDown7
             // 
-            textBox7.Location = new Point(64, 38);
-            textBox7.MaxLength = 1;
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(53, 27);
-            textBox7.TabIndex = 8;
-            textBox7.TextAlign = HorizontalAlignment.Center;
+            numericUpDown7.DecimalPlaces = 2;
+            numericUpDown7.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
+            numericUpDown7.Location = new Point(62, 37);
+            numericUpDown7.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDown7.Name = "numericUpDown7";
+            numericUpDown7.Size = new Size(53, 27);
+            numericUpDown7.TabIndex = 10;
+            numericUpDown7.TextAlign = HorizontalAlignment.Center;
             // 
-            // textBox8
+            // numericUpDown6
             // 
-            textBox8.Location = new Point(123, 38);
-            textBox8.MaxLength = 1;
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(53, 27);
-            textBox8.TabIndex = 7;
-            textBox8.TextAlign = HorizontalAlignment.Center;
+            numericUpDown6.DecimalPlaces = 2;
+            numericUpDown6.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
+            numericUpDown6.Location = new Point(3, 37);
+            numericUpDown6.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDown6.Name = "numericUpDown6";
+            numericUpDown6.Size = new Size(53, 27);
+            numericUpDown6.TabIndex = 9;
+            numericUpDown6.TextAlign = HorizontalAlignment.Center;
             // 
-            // textBox5
+            // numericUpDown5
             // 
-            textBox5.Location = new Point(241, 5);
-            textBox5.MaxLength = 1;
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(53, 27);
-            textBox5.TabIndex = 4;
-            textBox5.TextAlign = HorizontalAlignment.Center;
+            numericUpDown5.DecimalPlaces = 2;
+            numericUpDown5.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
+            numericUpDown5.Location = new Point(239, 4);
+            numericUpDown5.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDown5.Name = "numericUpDown5";
+            numericUpDown5.Size = new Size(53, 27);
+            numericUpDown5.TabIndex = 8;
+            numericUpDown5.TextAlign = HorizontalAlignment.Center;
             // 
-            // textBox4
+            // numericUpDown4
             // 
-            textBox4.Location = new Point(182, 5);
-            textBox4.MaxLength = 1;
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(53, 27);
-            textBox4.TabIndex = 3;
-            textBox4.TextAlign = HorizontalAlignment.Center;
+            numericUpDown4.DecimalPlaces = 2;
+            numericUpDown4.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
+            numericUpDown4.Location = new Point(180, 4);
+            numericUpDown4.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDown4.Name = "numericUpDown4";
+            numericUpDown4.Size = new Size(53, 27);
+            numericUpDown4.TabIndex = 7;
+            numericUpDown4.TextAlign = HorizontalAlignment.Center;
             // 
-            // textBox3
+            // numericUpDown3
             // 
-            textBox3.Location = new Point(123, 5);
-            textBox3.MaxLength = 1;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(53, 27);
-            textBox3.TabIndex = 2;
-            textBox3.TextAlign = HorizontalAlignment.Center;
+            numericUpDown3.DecimalPlaces = 2;
+            numericUpDown3.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
+            numericUpDown3.Location = new Point(121, 4);
+            numericUpDown3.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDown3.Name = "numericUpDown3";
+            numericUpDown3.Size = new Size(53, 27);
+            numericUpDown3.TabIndex = 6;
+            numericUpDown3.TextAlign = HorizontalAlignment.Center;
             // 
-            // textBox2
+            // numericUpDown2
             // 
-            textBox2.Location = new Point(64, 5);
-            textBox2.MaxLength = 1;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(53, 27);
-            textBox2.TabIndex = 1;
-            textBox2.TextAlign = HorizontalAlignment.Center;
+            numericUpDown2.DecimalPlaces = 2;
+            numericUpDown2.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
+            numericUpDown2.Location = new Point(62, 4);
+            numericUpDown2.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDown2.Name = "numericUpDown2";
+            numericUpDown2.Size = new Size(53, 27);
+            numericUpDown2.TabIndex = 5;
+            numericUpDown2.TextAlign = HorizontalAlignment.Center;
             // 
-            // textBox1
+            // numericUpDown1
             // 
-            textBox1.Location = new Point(5, 5);
-            textBox1.MaxLength = 1;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(53, 27);
-            textBox1.TabIndex = 0;
-            textBox1.TextAlign = HorizontalAlignment.Center;
+            numericUpDown1.DecimalPlaces = 2;
+            numericUpDown1.Increment = new decimal(new int[] { 1, 0, 0, 65536 });
+            numericUpDown1.Location = new Point(3, 4);
+            numericUpDown1.Maximum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDown1.Name = "numericUpDown1";
+            numericUpDown1.Size = new Size(53, 27);
+            numericUpDown1.TabIndex = 4;
+            numericUpDown1.TextAlign = HorizontalAlignment.Center;
             // 
             // button1
             // 
@@ -367,40 +442,64 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Изменение стурктурного элемента";
             panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown25).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown24).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown23).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown22).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown21).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown20).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown19).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown18).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown17).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown16).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown15).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown14).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown13).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown12).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown11).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown10).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Panel panel1;
-        private TextBox textBox1;
-        private TextBox textBox21;
-        private TextBox textBox22;
-        private TextBox textBox23;
-        private TextBox textBox24;
-        private TextBox textBox25;
-        private TextBox textBox16;
-        private TextBox textBox17;
-        private TextBox textBox18;
-        private TextBox textBox19;
-        private TextBox textBox20;
-        private TextBox textBox11;
-        private TextBox textBox12;
-        private TextBox textBox13;
-        private TextBox textBox14;
-        private TextBox textBox15;
-        private TextBox textBox6;
-        private TextBox textBox7;
-        private TextBox textBox8;
-        private TextBox textBox9;
-        private TextBox textBox10;
-        private TextBox textBox5;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private TextBox textBox2;
         private Button button1;
         private Button button2;
         private Button button3;
+        private NumericUpDown numericUpDown25;
+        private NumericUpDown numericUpDown24;
+        private NumericUpDown numericUpDown23;
+        private NumericUpDown numericUpDown22;
+        private NumericUpDown numericUpDown21;
+        private NumericUpDown numericUpDown20;
+        private NumericUpDown numericUpDown19;
+        private NumericUpDown numericUpDown18;
+        private NumericUpDown numericUpDown17;
+        private NumericUpDown numericUpDown16;
+        private NumericUpDown numericUpDown15;
+        private NumericUpDown numericUpDown14;
+        private NumericUpDown numericUpDown13;
+        private NumericUpDown numericUpDown12;
+        private NumericUpDown numericUpDown11;
+        private NumericUpDown numericUpDown10;
+        private NumericUpDown numericUpDown9;
+        private NumericUpDown numericUpDown8;
+        private NumericUpDown numericUpDown7;
+        private NumericUpDown numericUpDown6;
+        private NumericUpDown numericUpDown5;
+        private NumericUpDown numericUpDown4;
+        private NumericUpDown numericUpDown3;
+        private NumericUpDown numericUpDown2;
+        private NumericUpDown numericUpDown1;
     }
 }
