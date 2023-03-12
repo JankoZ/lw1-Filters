@@ -26,13 +26,14 @@ namespace Filters
                 {
                     int idX = Clamp(i + l, 0, sourceImage.Width - 1);
                     int idY = Clamp(j + k, 0, sourceImage.Height - 1);
-                    if (kernel[l + radiusX, k + radiusY] == 1)
-                    {
-                        if (sourceImage.GetPixel(idX, idY).R < min.R)
+                    if (kernel.GetLength(0) % 2 != 0)
+                        if (kernel[l + radiusX, k + radiusY] == 1)
+                        {
+                            if (sourceImage.GetPixel(idX, idY).R < min.R)
                             min = sourceImage.GetPixel(idX, idY);
-                        else if (sourceImage.GetPixel(idX, idY).R == min.R && sourceImage.GetPixel(idX, idY).G < min.G) min = sourceImage.GetPixel(idX, idY);
-                        else if (sourceImage.GetPixel(idX, idY).R == min.R && sourceImage.GetPixel(idX, idY).G == min.G && sourceImage.GetPixel(idX, idY).B < min.B) min = sourceImage.GetPixel(idX, idY);
-                    }
+                            else if (sourceImage.GetPixel(idX, idY).R == min.R && sourceImage.GetPixel(idX, idY).G < min.G) min = sourceImage.GetPixel(idX, idY);
+                            else if (sourceImage.GetPixel(idX, idY).R == min.R && sourceImage.GetPixel(idX, idY).G == min.G && sourceImage.GetPixel(idX, idY).B < min.B) min = sourceImage.GetPixel(idX, idY);
+                        }
                 }
                 resultColor = Color.FromArgb(min.R, min.G, min.B);
             }
